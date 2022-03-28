@@ -3,6 +3,8 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "arraylistodev": "cpp",
-        "xlocale": "cpp"
-    }
+        "xlocale": "cpp",
+        "chrono": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
