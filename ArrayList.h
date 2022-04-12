@@ -17,7 +17,7 @@ struct ArrayList
 
 void ArrayList::olustur()
 {
-    sayac = 10;
+    sayac = 1;
     bas = new int[sayac];           // arrayi oluşturduk ve adresini bas'a atadık
     for (int i = 0; i < sayac; i++) // tüm array elemanlarına 0 atıyoruz
     {
@@ -43,13 +43,21 @@ void ArrayList::yazdir()
 
 void ArrayList::ekle(int deger, int indis)
 {
-    for (int i = sayac; indis < i; i--) // değiştirmek istediğimiz indisten büyük indisleri bir arttırıyoruz ve istediğimiz indis boş kalıyor
-    {
-        bas[i] = bas[i - 1];
-    }
-    bas[indis] = deger; // istediğimiz indise değeri atıyoruz
-    cout << indis << ". indise " << deger << " ekliyoruz" << endl;
     sayac++;
+    int *tut;
+    tut = new int[sayac]; // boyutu bir arttırılmış bir array tanımladık
+    for (int i = 0; i < sayac; i++)
+    {
+        if (i == indis)
+        {
+            tut[i] = deger; // istediğimiz indise geldiğinde değeri atıyoruz
+        }
+        else
+        {
+            tut[i] = bas[i]; // eski dizideki değerler yeni diziye aktarılıyor
+        }
+    }
+    bas = tut;
 }
 
 void ArrayList::guncelle(int deger, int indis)

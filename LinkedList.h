@@ -35,7 +35,7 @@ void LinkedList::ekle(int deger, int indis)
         newNode->sonraki = NULL;
         bas = newNode;
         sayac++;
-        cout << indis << ". indise " << deger << " ekledik" << endl;
+        // cout << indis << ". indise " << deger << " ekledik" << endl;
         return;
     }
 
@@ -44,7 +44,7 @@ void LinkedList::ekle(int deger, int indis)
         newNode->sonraki = bas; // newNode düğümünün sonraki adresine listenin ilk düğüm adresi diyoruz
         bas = newNode;          // newNode değeri bas'a geçer
         sayac++;                // listenin elamınını 1 arttırdık
-        cout << indis << ". indise " << deger << " ekledik" << endl;
+        // cout << indis << ". indise " << deger << " ekledik" << endl;
         return;
     }
 
@@ -59,7 +59,7 @@ void LinkedList::ekle(int deger, int indis)
         }
         tara = tara->sonraki; // tara tüm listeyi gezmesi için yaptık
     }
-    cout << indis << ". indise " << deger << " ekledik" << endl;
+    // cout << indis << ". indise " << deger << " ekledik" << endl;
     sayac++;
 }
 
@@ -89,7 +89,7 @@ void LinkedList::guncelle(int deger, int indis)
         }
         tara = tara->sonraki;
     }
-    cout << indis << ". indisdeki " << tut << " değerini " << deger << " ile değiştiriyoruz." << endl;
+    cout << "   " << indis << ". indisdeki " << tut << " değerini " << deger << " ile değiştiriyoruz." << endl;
 }
 
 void LinkedList::sil(int indis)
@@ -110,7 +110,7 @@ void LinkedList::sil(int indis)
         bas = bas->sonraki; // ilk elemanı ikinci eleman yapıyoruz
         delete tara;        // ilk elemanı sildik
         sayac--;
-        cout << "0. indisdeki degeri sildik" << endl;
+        cout << "   0. indisdeki degeri sildik" << endl;
         return;
     }
     for (int i = 0; i < sayac; i++)
@@ -124,7 +124,8 @@ void LinkedList::sil(int indis)
         }
         tara = tara->sonraki;
     }
-    cout << indis << ". indisdeki degeri sildik" << endl;
+    cout << "   " << indis << ". indisdeki degeri sildik" << endl;
+    sayac--;
 }
 
 void LinkedList::bosalt()
